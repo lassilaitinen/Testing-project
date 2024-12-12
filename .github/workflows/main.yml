@@ -1,4 +1,4 @@
-name: Run Robot Framework Tests
+name: CI-pipeline
 
 on:
   workflow_dispatch:
@@ -52,3 +52,7 @@ jobs:
           path: ./results
           name: robot-test-results
           retention-days: 3
+      - name: Run Performance Test
+        run: |
+          curl -s https://raw.githubusercontent.com/grafana/k6/master/install.sh | bash
+          k6 run performance-test.js
