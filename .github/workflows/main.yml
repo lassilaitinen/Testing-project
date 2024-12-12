@@ -1,6 +1,9 @@
 name: CI-pipeline
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
   schedule:
     - cron: '0 17 * * *'
@@ -55,4 +58,4 @@ jobs:
       - name: Run Performance Test
         run: |
           curl -s https://raw.githubusercontent.com/grafana/k6/master/install.sh | bash
-          k6 run performance-test.js
+          k6 run script.js
