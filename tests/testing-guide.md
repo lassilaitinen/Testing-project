@@ -1,1 +1,0 @@
-![GHA workflow badge](https://github.com/lassilaitinen/bunnybook/actions/workflows/main.yml/badge.svg)
