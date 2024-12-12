@@ -31,7 +31,6 @@ jobs:
 
       - name: Robot
         run: |
-          docker-compose up
           robot tests
 
       - name: Run Robot Framework tests
