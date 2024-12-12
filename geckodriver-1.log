@@ -1,0 +1,19 @@
+1733821039807	geckodriver	INFO	Listening on 127.0.0.1:60624
+1733821042946	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "60625" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\lassi\\AppData\\Local\\Temp\\rust_mozprofileBwwFR2"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1733821043714	Marionette	INFO	Marionette enabled
+1733821043867	Marionette	INFO	Listening on port 60632
+WebDriver BiDi listening on ws://127.0.0.1:60625
+Read port: 60632
+1733821044174	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:60625/devtools/browser/68ef0a96-3106-4c4d-8459-368f92348a0b
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.error: ({})
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE

@@ -43,6 +43,7 @@ const PostContainer = ({
         "Do you really want to delete this post and all its comments?"
       )
     ) {
+    
       onDeletePostClick && onDeletePostClick(post.id);
     }
   };
