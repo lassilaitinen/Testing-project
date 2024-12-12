@@ -27,6 +27,12 @@ jobs:
           # Install additional dependencies if needed
           pip install robotframework
           pip install robotframework-browser
+          rfbrowser init
+
+      - name: Robot
+        run: |
+          docker-compose up
+          robot tests
 
       - name: Run Robot Framework tests
         env:
