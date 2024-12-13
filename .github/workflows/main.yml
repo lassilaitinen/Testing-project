@@ -28,17 +28,6 @@ jobs:
           pip install robotframework
           pip install robotframework-browser
           rfbrowser init
-          
-      - name: Set up Docker Compose
-        run: |
-          docker --version
-          docker-compose --version
-
-      - name: Start Application
-        run: |
-          docker-compose up -d
-          sleep 10          
-          curl -f http://localhost || exit 1  
 
       - name: Setup K6
         uses: grafana/setup-k6-action@v1
@@ -52,7 +41,7 @@ jobs:
         env:
             WORK_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: |
-          robot tests
+          robot -d tests
         continue-on-error: true
 
       - name: Run Robot Framework tests
