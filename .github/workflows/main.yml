@@ -28,6 +28,11 @@ jobs:
           pip install robotframework
           pip install robotframework-browser
           rfbrowser init
+          
+      - name: Set up Docker Compose
+        run: |
+          docker --version
+          docker-compose --version
 
       - name: Start Application
         run: |
