@@ -28,7 +28,14 @@ jobs:
           pip install robotframework
           pip install robotframework-browser
           rfbrowser init
-          curl -s https://raw.githubusercontent.com/grafana/k6/master/install.sh | bash
+      
+      - name: Setup K6
+        uses: grafana/setup-k6-action@v1
+
+      - name: Run local k6 test
+        uses: grafana/run-k6-action@v1
+        with:
+          path: script.js
 
       - name: Robot
         env:
