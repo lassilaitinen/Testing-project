@@ -31,10 +31,10 @@ jobs:
 
       - name: Start Application
         run: |
-          docker-compose up
+          docker-compose up -d
           sleep 10          
           curl -f http://localhost || exit 1  
-          
+
       - name: Setup K6
         uses: grafana/setup-k6-action@v1
 
