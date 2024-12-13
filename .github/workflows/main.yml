@@ -28,11 +28,17 @@ jobs:
           pip install robotframework
           pip install robotframework-browser
           rfbrowser init
-      
+
+      - name: Start Application
+        run: |
+          docker-compose up
+          sleep 10          
+          curl -f http://localhost || exit 1  
+          
       - name: Setup K6
         uses: grafana/setup-k6-action@v1
 
-      - name: Run local k6 test
+      - name: Run K6 Performance tests 
         uses: grafana/run-k6-action@v1
         with:
           path: script.js
@@ -72,6 +78,3 @@ jobs:
           path: ./results
           name: robot-test-results
           retention-days: 3
-      - name: Run Performance Test
-        run: |
-          k6 run script.js
