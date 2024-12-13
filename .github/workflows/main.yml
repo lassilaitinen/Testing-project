@@ -30,8 +30,11 @@ jobs:
           rfbrowser init
 
       - name: Robot
+        env:
+            WORK_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: |
           robot tests
+        continue-on-error: true
 
       - name: Run Robot Framework tests
         env:
