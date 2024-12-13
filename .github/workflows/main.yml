@@ -28,6 +28,7 @@ jobs:
           pip install robotframework
           pip install robotframework-browser
           rfbrowser init
+          choco install k6
 
       - name: Robot
         env:
@@ -66,5 +67,4 @@ jobs:
           retention-days: 3
       - name: Run Performance Test
         run: |
-          curl -s https://raw.githubusercontent.com/grafana/k6/master/install.sh | bash
           k6 run script.js
