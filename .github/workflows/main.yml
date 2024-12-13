@@ -28,7 +28,7 @@ jobs:
           pip install robotframework
           pip install robotframework-browser
           rfbrowser init
-          choco install k6
+          curl -s https://raw.githubusercontent.com/grafana/k6/master/install.sh | bash
 
       - name: Robot
         env:
