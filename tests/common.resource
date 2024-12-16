@@ -7,7 +7,7 @@ ${URL} =    http://localhost
 *** Keywords ***
 Open Browser To Login Page
     New Browser    #headless=${FALSE}
-    New Page    ${URL}
+    New Page    ${URL}/login
 
 Enter Email Address
     [Arguments]    ${EMAIL}
