@@ -133,7 +133,7 @@ Publish A Post Only Friends To See
     Get Text    ${latest_post}    contains    This is for friends only.
     Do Successful Logout
     Open Browser To Login Page
-    Do Successful Login    robotti@example.com    ${PASSWORD}
+    Do Successful Login    robot@example.com    ${PASSWORD}
     Fill Text    xpath=//input[@type="search"]    user
     Click    xpath=/html/body/div/div[1]/div[1]/div/div[2]/div/a
     ${page_text}=    Get Text    xpath=//div[@class="column is-half"]
