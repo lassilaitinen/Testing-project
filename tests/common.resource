@@ -20,3 +20,4 @@ Enter Password
 Submit Login Form
     Sleep    2s
     Click    //button[contains(text(), "Login")]
+    Sleep    2s
