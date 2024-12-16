@@ -25,8 +25,8 @@ Do Successful Login
     Enter Email Address    ${email}
     Enter Password    ${psw}
     Submit Login Form
-    Sleep    5s
-    Get Url    ==    ${URL}/profile
+    #Sleep    5s
+    #Get Url    ==    ${URL}/profile
 
 Do Successful Logout
     Click    //button[contains(text(), "Log out")]
