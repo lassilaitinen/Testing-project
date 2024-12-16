@@ -25,7 +25,7 @@ Do Successful Login
     Enter Email Address    ${email}
     Enter Password    ${psw}
     Submit Login Form
-    Sleep    2s
+    Sleep    5s
     Get Url    ==    ${URL}/profile
 
 Do Successful Logout
@@ -75,6 +75,7 @@ Do Successful Registaration And Successfully Log In
     Enter Password    string123
     #Fill Text    xpath=//input[@name="loginPassword"]    string123
     Submit Login Form
+    Sleep    5s
     #The following checks that chat is availabel; a feature that doesn't exist in the login page or in any other page
     Get Text    body    contains    Chat
     Get Url    ==    ${URL}/profile

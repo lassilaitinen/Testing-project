@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.6 on win32)" generated="2024-12-16T13:12:11.116465" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\kurssit\softwaretesting\bunnybook\tests">
+<suite id="s1-s1" name="E2E Tests" source="C:\kurssit\softwaretesting\bunnybook\tests\e2e_tests.robot">
+<test id="s1-s1-t1" name="Profile Front Page Should Be Visible After Successful Login" line="47">
+<kw name="Open Browser To Login Page" owner="common">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-12-16T13:12:11.581728" level="INFO">{"browser": "chromium", "headless": true, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\kurssit\\softwaretesting\\bunnybook\\browser\\traces\\148b711c-2ffc-4496-9e3e-29962d8cc097"}</msg>
+<msg time="2024-12-16T13:12:12.722656" level="INFO">Starting Browser process C:\Users\lassi\AppData\Roaming\Python\Python312\site-packages\Browser\wrapper\index.js using port 52351</msg>
+<msg time="2024-12-16T13:12:12.722656" level="INFO">Node startup parameters: ['node', 'C:\\Users\\lassi\\AppData\\Roaming\\Python\\Python312\\site-packages\\Browser\\wrapper\\index.js', '52351']</msg>
+<msg time="2024-12-16T13:12:22.335832" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\kurssit\\softwaretesting\\bunnybook\\browser\\traces\\148b711c-2ffc-4496-9e3e-29962d8cc097"}</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-12-16T13:12:11.581728" elapsed="10.754104"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-12-16T13:12:25.079112" level="INFO">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg time="2024-12-16T13:12:25.079112" level="INFO">See also file:///C:/kurssit/softwaretesting/bunnybook/playwright-log.txt for additional details.</msg>
+<msg time="2024-12-16T13:12:25.079112" level="FAIL">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</msg>
+<arg>${URL}/login</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="FAIL" start="2024-12-16T13:12:22.335832" elapsed="2.822203">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:11.581728" elapsed="13.576307">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<kw name="Do Successful Login">
+<arg>${EMAIL}</arg>
+<arg>${PASSWORD}</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:25.158035" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<arg>body</arg>
+<arg>contains</arg>
+<arg>Chat</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:25.158035" elapsed="0.000000"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<arg>==</arg>
+<arg>${URL}/profile</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:25.158035" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:11.581728" elapsed="13.576307">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</test>
+<test id="s1-s1-t2" name="Error Message Should Be Visible After Login With Wrong Password" line="54">
+<kw name="Open Browser To Login Page" owner="common">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-12-16T13:12:25.189548" level="INFO">Switching browser to browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:25.198056" level="INFO">Successfully changed active browser: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:25.198056" level="INFO">Reusing existing browser with id: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-12-16T13:12:25.189548" elapsed="0.008508"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-12-16T13:12:27.643104" level="INFO">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg time="2024-12-16T13:12:27.643104" level="INFO">See also file:///C:/kurssit/softwaretesting/bunnybook/playwright-log.txt for additional details.</msg>
+<msg time="2024-12-16T13:12:27.643104" level="FAIL">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</msg>
+<arg>${URL}/login</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="FAIL" start="2024-12-16T13:12:25.198056" elapsed="2.445048">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:25.189548" elapsed="2.453556">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<kw name="Enter Email Address" owner="common">
+<arg>${EMAIL}</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:27.643104" elapsed="0.000000"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<arg>xpath=//input[@name="loginPassword"]</arg>
+<arg>stringi</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:27.643104" elapsed="0.000000"/>
+</kw>
+<kw name="Submit Login Form" owner="common">
+<status status="NOT RUN" start="2024-12-16T13:12:27.643104" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<arg>body</arg>
+<arg>contains</arg>
+<arg>Invalid email/password combination</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:27.643104" elapsed="0.000000"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<arg>==</arg>
+<arg>${URL}/login</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:27.643104" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:25.189548" elapsed="2.453556">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</test>
+<test id="s1-s1-t3" name="Error Message Should Be Visible After Login With Wrong Email" line="62">
+<kw name="Open Browser To Login Page" owner="common">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-12-16T13:12:27.674755" level="INFO">Switching browser to browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:27.674755" level="INFO">Successfully changed active browser: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:27.674755" level="INFO">Reusing existing browser with id: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-12-16T13:12:27.674755" elapsed="0.000000"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-12-16T13:12:30.124763" level="INFO">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg time="2024-12-16T13:12:30.124763" level="INFO">See also file:///C:/kurssit/softwaretesting/bunnybook/playwright-log.txt for additional details.</msg>
+<msg time="2024-12-16T13:12:30.124763" level="FAIL">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</msg>
+<arg>${URL}/login</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="FAIL" start="2024-12-16T13:12:27.674755" elapsed="2.450008">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:27.674755" elapsed="2.450008">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<arg>xpath=//input[@name="loginEmail"]</arg>
+<arg>user2@example.com</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:30.124763" elapsed="0.000000"/>
+</kw>
+<kw name="Enter Password" owner="common">
+<arg>${PASSWORD}</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:30.124763" elapsed="0.000000"/>
+</kw>
+<kw name="Submit Login Form" owner="common">
+<status status="NOT RUN" start="2024-12-16T13:12:30.124763" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<arg>body</arg>
+<arg>contains</arg>
+<arg>Invalid email/password combination</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:30.124763" elapsed="0.000000"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<arg>==</arg>
+<arg>${URL}/login</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:30.124763" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:27.674755" elapsed="2.450008">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</test>
+<test id="s1-s1-t4" name="Do Successful Registaration And Successfully Log In" line="70">
+<kw name="Open Registaration Page">
+<kw name="Open Browser To Login Page" owner="common">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-12-16T13:12:30.158320" level="INFO">Switching browser to browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:30.158320" level="INFO">Successfully changed active browser: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:30.158320" level="INFO">Reusing existing browser with id: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-12-16T13:12:30.158320" elapsed="0.000000"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-12-16T13:12:32.613545" level="INFO">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg time="2024-12-16T13:12:32.613545" level="INFO">See also file:///C:/kurssit/softwaretesting/bunnybook/playwright-log.txt for additional details.</msg>
+<msg time="2024-12-16T13:12:32.613545" level="FAIL">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</msg>
+<arg>${URL}/login</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="FAIL" start="2024-12-16T13:12:30.158320" elapsed="2.455225">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:30.158320" elapsed="2.455225">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>//button[contains(text(), "Sign up")]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:32.613545" elapsed="0.000000"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<arg>==</arg>
+<arg>${URL}/register</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:32.613545" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:30.158320" elapsed="2.455225">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<kw name="Fill Registaration Form">
+<status status="NOT RUN" start="2024-12-16T13:12:32.613545" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser To Login Page" owner="common">
+<status status="NOT RUN" start="2024-12-16T13:12:32.613545" elapsed="0.000000"/>
+</kw>
+<kw name="Enter Email Address" owner="common">
+<arg>robot@example.com</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:32.613545" elapsed="0.000000"/>
+</kw>
+<kw name="Enter Password" owner="common">
+<arg>string123</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:32.613545" elapsed="0.000000"/>
+</kw>
+<kw name="Submit Login Form" owner="common">
+<status status="NOT RUN" start="2024-12-16T13:12:32.613545" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<arg>body</arg>
+<arg>contains</arg>
+<arg>Chat</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:32.613545" elapsed="0.000000"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<arg>==</arg>
+<arg>${URL}/profile</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:32.613545" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:30.158320" elapsed="2.455225">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</test>
+<test id="s1-s1-t5" name="Login Page Should Be Visible After Successful Logout" line="82">
+<kw name="Open Browser To Login Page" owner="common">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-12-16T13:12:32.640690" level="INFO">Switching browser to browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:32.640690" level="INFO">Successfully changed active browser: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:32.640690" level="INFO">Reusing existing browser with id: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-12-16T13:12:32.640690" elapsed="0.000000"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-12-16T13:12:35.096735" level="INFO">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg time="2024-12-16T13:12:35.096735" level="INFO">See also file:///C:/kurssit/softwaretesting/bunnybook/playwright-log.txt for additional details.</msg>
+<msg time="2024-12-16T13:12:35.096735" level="FAIL">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</msg>
+<arg>${URL}/login</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="FAIL" start="2024-12-16T13:12:32.640690" elapsed="2.456045">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:32.640690" elapsed="2.456045">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<kw name="Do Successful Login">
+<arg>${EMAIL}</arg>
+<arg>${PASSWORD}</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:35.096735" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<arg>body</arg>
+<arg>contains</arg>
+<arg>Chat</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:35.096735" elapsed="0.000000"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<arg>==</arg>
+<arg>${URL}/profile</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:35.096735" elapsed="0.000000"/>
+</kw>
+<kw name="Do Successful Logout">
+<status status="NOT RUN" start="2024-12-16T13:12:35.096735" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<arg>body</arg>
+<arg>contains</arg>
+<arg>Don't have an account?</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:35.096735" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:32.640690" elapsed="2.456045">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</test>
+<test id="s1-s1-t6" name="Publish A Public Post" line="91">
+<kw name="Open Browser To Login Page" owner="common">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-12-16T13:12:35.138184" level="INFO">Switching browser to browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:35.138184" level="INFO">Successfully changed active browser: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:35.138184" level="INFO">Reusing existing browser with id: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-12-16T13:12:35.138184" elapsed="0.000000"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-12-16T13:12:37.599234" level="INFO">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg time="2024-12-16T13:12:37.607739" level="INFO">See also file:///C:/kurssit/softwaretesting/bunnybook/playwright-log.txt for additional details.</msg>
+<msg time="2024-12-16T13:12:37.607739" level="FAIL">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</msg>
+<arg>${URL}/login</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="FAIL" start="2024-12-16T13:12:35.138184" elapsed="2.469555">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:35.138184" elapsed="2.469555">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<kw name="Do Successful Login">
+<arg>${EMAIL}</arg>
+<arg>${PASSWORD}</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:37.607739" elapsed="0.000000"/>
+</kw>
+<kw name="Write And Publish A Post">
+<arg>PUBLIC</arg>
+<arg>This is a public post.</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:37.607739" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<arg>xpath=//div[@class="column is-half"]</arg>
+<arg>contains</arg>
+<arg>This is a public post.</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:37.607739" elapsed="0.000000"/>
+</kw>
+<kw name="Do Successful Logout">
+<status status="NOT RUN" start="2024-12-16T13:12:37.607739" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser To Login Page" owner="common">
+<status status="NOT RUN" start="2024-12-16T13:12:37.607739" elapsed="0.000000"/>
+</kw>
+<kw name="Do Successful Login">
+<arg>coder@example.com</arg>
+<arg>${PASSWORD}</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:37.607739" elapsed="0.000000"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${FRIENDS_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:37.607739" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<var>${friend_user}</var>
+<arg>xpath=/html/body/div/div[2]/div[2]/div[1]/div/div/p</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:37.607739" elapsed="0.000000"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>xpath=/html/body/div/div[2]/div[2]/div[1]/div/div/p</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:37.607739" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<var>${friend_latest_post}</var>
+<arg>xpath=/html/body/div/div[2]/div[2]/div[3]/div</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:37.607739" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<arg>${friend_latest_post}</arg>
+<arg>contains</arg>
+<arg>${friend_user}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:37.607739" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<arg>${friend_latest_post}</arg>
+<arg>contains</arg>
+<arg>This is a public post.</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:37.607739" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:35.121964" elapsed="2.485775">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</test>
+<test id="s1-s1-t7" name="Delete Your Own Public Post" line="106">
+<kw name="Open Browser To Login Page" owner="common">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-12-16T13:12:37.630936" level="INFO">Switching browser to browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:37.630936" level="INFO">Successfully changed active browser: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:37.630936" level="INFO">Reusing existing browser with id: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-12-16T13:12:37.630936" elapsed="0.000000"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-12-16T13:12:40.099202" level="INFO">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg time="2024-12-16T13:12:40.099202" level="INFO">See also file:///C:/kurssit/softwaretesting/bunnybook/playwright-log.txt for additional details.</msg>
+<msg time="2024-12-16T13:12:40.099202" level="FAIL">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</msg>
+<arg>${URL}/login</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="FAIL" start="2024-12-16T13:12:37.630936" elapsed="2.468266">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:37.630936" elapsed="2.473066">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<kw name="Do Successful Login">
+<arg>${EMAIL}</arg>
+<arg>${PASSWORD}</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:40.104002" elapsed="0.000000"/>
+</kw>
+<kw name="Write And Publish A Post">
+<arg>PUBLIC</arg>
+<arg>This is a public post to be deleted.</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:40.104002" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<arg>xpath=//div[@class="column is-half"]</arg>
+<arg>contains</arg>
+<arg>This is a public post to be deleted.</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:40.104002" elapsed="0.000000"/>
+</kw>
+<kw name="Promise To" owner="Browser">
+<var>${promise}</var>
+<arg>Wait For Alert</arg>
+<arg>action=accept</arg>
+<tag>Wait</tag>
+<doc>Wrap a Browser library keyword and make it a promise.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:40.104002" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:40.104002" elapsed="0.000000"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>xpath=/html/body/div/div[2]/div[2]/div[2]/div/div[1]/div[1]/div[2]/div/button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:40.104002" elapsed="0.000000"/>
+</kw>
+<kw name="Wait For" owner="Browser">
+<arg>${promise}</arg>
+<tag>Wait</tag>
+<doc>Waits for promises to finish and returns results from them.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:40.105385" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:40.105385" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<var>${page_text}</var>
+<arg>xpath=/html/body/div/div[2]/div[2]/div[2]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:40.105385" elapsed="0.000000"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${page_text}</arg>
+<arg>This is a public post to be deleted.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:40.105385" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:37.630936" elapsed="2.474449">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</test>
+<test id="s1-s1-t8" name="Publish A Post Only Friends To See" line="119">
+<kw name="Open Browser To Login Page" owner="common">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-12-16T13:12:40.131894" level="INFO">Switching browser to browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:40.131894" level="INFO">Successfully changed active browser: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:40.131894" level="INFO">Reusing existing browser with id: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-12-16T13:12:40.131894" elapsed="0.000000"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-12-16T13:12:42.642848" level="INFO">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg time="2024-12-16T13:12:42.642848" level="INFO">See also file:///C:/kurssit/softwaretesting/bunnybook/playwright-log.txt for additional details.</msg>
+<msg time="2024-12-16T13:12:42.642848" level="FAIL">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</msg>
+<arg>${URL}/login</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="FAIL" start="2024-12-16T13:12:40.131894" elapsed="2.510954">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:40.131894" elapsed="2.510954">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<kw name="Do Successful Login">
+<arg>${EMAIL}</arg>
+<arg>${PASSWORD}</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:42.642848" elapsed="0.000000"/>
+</kw>
+<kw name="Write And Publish A Post">
+<arg>FRIENDS</arg>
+<arg>This is for friends only.</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:42.642848" elapsed="0.000000"/>
+</kw>
+<kw name="Do Successful Logout">
+<status status="NOT RUN" start="2024-12-16T13:12:42.642848" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser To Login Page" owner="common">
+<status status="NOT RUN" start="2024-12-16T13:12:42.642848" elapsed="0.000000"/>
+</kw>
+<kw name="Do Successful Login">
+<arg>robotti@example.com</arg>
+<arg>${PASSWORD}</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:42.642848" elapsed="0.000000"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<arg>xpath=//input[@type="search"]</arg>
+<arg>user</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:42.642848" elapsed="0.000000"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>xpath=/html/body/div/div[1]/div[1]/div/div[2]/div/a</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:42.642848" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<var>${page_text}</var>
+<arg>xpath=//div[@class="column is-half"]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:42.642848" elapsed="0.000000"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${page_text}</arg>
+<arg>This is for friends only.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:42.642848" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:40.131894" elapsed="2.510954">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</test>
+<test id="s1-s1-t9" name="View Public Post Made By Another User" line="131">
+<kw name="Open Browser To Login Page" owner="common">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-12-16T13:12:42.674286" level="INFO">Switching browser to browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:42.674286" level="INFO">Successfully changed active browser: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:42.674286" level="INFO">Reusing existing browser with id: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-12-16T13:12:42.674286" elapsed="0.000000"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-12-16T13:12:45.131509" level="INFO">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg time="2024-12-16T13:12:45.131509" level="INFO">See also file:///C:/kurssit/softwaretesting/bunnybook/playwright-log.txt for additional details.</msg>
+<msg time="2024-12-16T13:12:45.131509" level="FAIL">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</msg>
+<arg>${URL}/login</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="FAIL" start="2024-12-16T13:12:42.674286" elapsed="2.457223">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:42.674286" elapsed="2.457223">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<kw name="Do Successful Login">
+<arg>${EMAIL}</arg>
+<arg>${PASSWORD}</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:45.131509" elapsed="0.000000"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${FRIENDS_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:45.131509" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<var>${friend_user}</var>
+<arg>xpath=/html/body/div/div[2]/div[2]/div[1]/div/div/p</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:45.131509" elapsed="0.000000"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>xpath=/html/body/div/div[2]/div[2]/div[1]/div/div/p</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:45.131509" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<var>${friend_latest_post}</var>
+<arg>xpath=/html/body/div/div[2]/div[2]/div[3]/div</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:45.131509" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<arg>${friend_latest_post}</arg>
+<arg>contains</arg>
+<arg>${friend_user}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:45.131509" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<arg>${friend_latest_post}</arg>
+<arg>contains</arg>
+<arg>hello everybody!</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:45.131509" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:42.671681" elapsed="2.459828">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</test>
+<test id="s1-s1-t10" name="Comment A Post Made By Other User" line="141">
+<kw name="Open Browser To Login Page" owner="common">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-12-16T13:12:45.170670" level="INFO">Switching browser to browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:45.170670" level="INFO">Successfully changed active browser: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:45.170670" level="INFO">Reusing existing browser with id: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-12-16T13:12:45.170670" elapsed="0.000000"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-12-16T13:12:47.626686" level="INFO">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg time="2024-12-16T13:12:47.626686" level="INFO">See also file:///C:/kurssit/softwaretesting/bunnybook/playwright-log.txt for additional details.</msg>
+<msg time="2024-12-16T13:12:47.626686" level="FAIL">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</msg>
+<arg>${URL}/login</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="FAIL" start="2024-12-16T13:12:45.170670" elapsed="2.456016">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:45.170670" elapsed="2.456016">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<kw name="Do Successful Login">
+<arg>${EMAIL}</arg>
+<arg>${PASSWORD}</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:47.626686" elapsed="0.000000"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${FRIENDS_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:47.626686" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<var>${friend_link}</var>
+<arg>xpath=/html/body/div/div[2]/div[2]/div[1]/div/div/p</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:47.626686" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<var>${friend_user}</var>
+<arg>${friend_link}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:47.626686" elapsed="0.000000"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>${friend_link}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:47.626686" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<var>${friend_latest_post}</var>
+<arg>xpath=/html/body/div/div[2]/div[2]/div[3]/div</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:47.626686" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<arg>${friend_latest_post}</arg>
+<arg>contains</arg>
+<arg>${friend_user}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:47.626686" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<arg>${friend_latest_post}</arg>
+<arg>contains</arg>
+<arg>hello everybody!</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:47.626686" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<var>${friend_latest_post_comment_input}</var>
+<arg>xpath=//input[@class="jsx-2270411553 input ml-2"] &gt;&gt; nth=0</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:47.626686" elapsed="0.000000"/>
+</kw>
+<kw name="Write And Send A Comment To Post">
+<arg>This is a comment.</arg>
+<arg>${friend_latest_post_comment_input}</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:47.626686" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<arg>${friend_latest_post}</arg>
+<arg>contains</arg>
+<arg>This is a comment.</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:47.626686" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:45.166263" elapsed="2.460423">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</test>
+<test id="s1-s1-t11" name="Comment Your Own Post" line="155">
+<kw name="Open Browser To Login Page" owner="common">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-12-16T13:12:47.642318" level="INFO">Switching browser to browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:47.658419" level="INFO">Successfully changed active browser: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<msg time="2024-12-16T13:12:47.658419" level="INFO">Reusing existing browser with id: browser=1015adaf-0075-4cb4-8a79-8b9ecef18773</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-12-16T13:12:47.642318" elapsed="0.016101"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-12-16T13:12:50.121159" level="INFO">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg time="2024-12-16T13:12:50.121159" level="INFO">See also file:///C:/kurssit/softwaretesting/bunnybook/playwright-log.txt for additional details.</msg>
+<msg time="2024-12-16T13:12:50.121159" level="FAIL">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</msg>
+<arg>${URL}/login</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="FAIL" start="2024-12-16T13:12:47.658419" elapsed="2.462740">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:47.642318" elapsed="2.478841">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</kw>
+<kw name="Do Successful Login">
+<arg>${EMAIL}</arg>
+<arg>${PASSWORD}</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:50.121159" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<var>${latest_post}</var>
+<arg>xpath=//div[@class="mt-5"] &gt;&gt; nth=0</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:50.121159" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<var>${latest_post_comment_input}</var>
+<arg>xpath=//input[@class="jsx-2270411553 input ml-2"] &gt;&gt; nth=0</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:50.121159" elapsed="0.000000"/>
+</kw>
+<kw name="Write And Send A Comment To Post">
+<arg>This is a comment to my own post.</arg>
+<arg>${latest_post_comment_input}</arg>
+<status status="NOT RUN" start="2024-12-16T13:12:50.121159" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<arg>${latest_post}</arg>
+<arg>contains</arg>
+<arg>This is a comment to my own post.</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-12-16T13:12:50.121159" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-12-16T13:12:47.642318" elapsed="2.478841">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost/login
+Call log:
+  - navigating to "http://localhost/login", waiting until "load"
+</status>
+</test>
+<status status="FAIL" start="2024-12-16T13:12:11.174847" elapsed="38.977449"/>
+</suite>
+<status status="FAIL" start="2024-12-16T13:12:11.127554" elapsed="39.024742"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="11" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="11" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="11" skip="0" id="s1-s1" name="E2E Tests">Tests.E2E Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
