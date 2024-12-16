@@ -15,9 +15,10 @@ Open Registaration Page
     Get Url    ==    ${URL}/register
 
 Fill Registaration Form
-    Fill Text    xpath=//input[@name="email"]    robot@example.com
-    Fill Text    xpath=//input[@name="username"]    robot
-    Fill Text    xpath=//input[@name="password"]    string123
+    [Arguments]    ${email}    ${psw}    ${name}
+    Fill Text    xpath=//input[@name="email"]    ${email}
+    Fill Text    xpath=//input[@name="username"]    ${name}
+    Fill Text    xpath=//input[@name="password"]    ${psw}
     Click   //button[contains(text(), "Register")]
 
 Do Successful Login
@@ -25,7 +26,6 @@ Do Successful Login
     Enter Email Address    ${email}
     Enter Password    ${psw}
     Submit Login Form
-    #Sleep    5s
     #Get Url    ==    ${URL}/profile
 
 Do Successful Logout
@@ -44,6 +44,14 @@ Write And Publish A Post
 
 
 *** Test Cases ***
+Register Default User
+    Open Registaration Page
+    Fill Registaration Form    ${EMAIL}    ${PASSWORD}    user
+    Open Browser To Login Page
+    Do Successful Login    ${EMAIL}    ${PASSWORD}
+    Get Url    ==    ${URL}/profile
+    Do Successful Logout
+
 Profile Front Page Should Be Visible After Successful Login
     Open Browser To Login Page
     Do Successful Login    ${EMAIL}    ${PASSWORD}
@@ -69,13 +77,12 @@ Error Message Should Be Visible After Login With Wrong Email
 
 Do Successful Registaration And Successfully Log In
     Open Registaration Page
-    Fill Registaration Form
+    Fill Registaration Form    robot@example.com    ${PASSWORD}   robot
     Open Browser To Login Page
     Enter Email Address    robot@example.com
     Enter Password    string123
     #Fill Text    xpath=//input[@name="loginPassword"]    string123
     Submit Login Form
-    Sleep    5s
     #The following checks that chat is availabel; a feature that doesn't exist in the login page or in any other page
     Get Text    body    contains    Chat
     Get Url    ==    ${URL}/profile
@@ -96,8 +103,9 @@ Publish A Public Post
     Get Text    xpath=//div[@class="column is-half"]    contains    This is a public post.
     Do Successful Logout
     Open Browser To Login Page
-    Do Successful Login    coder@example.com    ${PASSWORD}
-    Click    ${FRIENDS_BUTTON}
+    Do Successful Login    robot@example.com    ${PASSWORD}
+    Fill Text    xpath=//input[@type="search"]    user
+    Click    xpath=/html/body/div/div[1]/div[1]/div/div[2]/div/a
     ${friend_user}    Get Text    xpath=/html/body/div/div[2]/div[2]/div[1]/div/div/p
     Click    xpath=/html/body/div/div[2]/div[2]/div[1]/div/div/p
     ${friend_latest_post}    Get Element    xpath=/html/body/div/div[2]/div[2]/div[3]/div
@@ -121,6 +129,8 @@ Publish A Post Only Friends To See
     Open Browser To Login Page
     Do Successful Login    ${EMAIL}    ${PASSWORD}
     Write And Publish A Post    FRIENDS    This is for friends only.
+    ${latest_post}    Get Element    xpath=/html/body/div/div[2]/div[2]/div[3]/div
+    Get Text    ${latest_post}    contains    This is for friends only.
     Do Successful Logout
     Open Browser To Login Page
     Do Successful Login    robotti@example.com    ${PASSWORD}
@@ -131,24 +141,21 @@ Publish A Post Only Friends To See
 
 View Public Post Made By Another User
     Open Browser To Login Page
-    Do Successful Login    ${EMAIL}    ${PASSWORD}
-    Click    ${FRIENDS_BUTTON}
-    ${friend_user}    Get Text    xpath=/html/body/div/div[2]/div[2]/div[1]/div/div/p
-    Click    xpath=/html/body/div/div[2]/div[2]/div[1]/div/div/p
+    Do Successful Login    robot@example.com    ${PASSWORD}
+    Fill Text    xpath=//input[@type="search"]    user
+    Click    xpath=/html/body/div/div[1]/div[1]/div/div[2]/div/a
     ${friend_latest_post}    Get Element    xpath=/html/body/div/div[2]/div[2]/div[3]/div
-    Get Text    ${friend_latest_post}    contains    ${friend_user}
-    Get Text    ${friend_latest_post}    contains    hello everybody!
+    Get Text    ${friend_latest_post}    contains    user
+    Get Text    ${friend_latest_post}    contains    This is a public post.
 
 Comment A Post Made By Other User
     Open Browser To Login Page
-    Do Successful Login    ${EMAIL}    ${PASSWORD}
-    Click    ${FRIENDS_BUTTON}
-    ${friend_link}    Get Element    xpath=/html/body/div/div[2]/div[2]/div[1]/div/div/p
-    ${friend_user}    Get Text    ${friend_link}
-    Click    ${friend_link}
-    ${friend_latest_post}    Get Element    xpath=/html/body/div/div[2]/div[2]/div[3]/div
-    Get Text    ${friend_latest_post}    contains    ${friend_user}
-    Get Text    ${friend_latest_post}    contains    hello everybody!
+    Do Successful Login    robot@example.com    ${PASSWORD}
+    Fill Text    xpath=//input[@type="search"]    user
+    Click    xpath=/html/body/div/div[1]/div[1]/div/div[2]/div/a
+    ${friend_latest_post}    Get Element     xpath=//div[@class="mt-5"] >> nth=0
+    Get Text    ${friend_latest_post}    contains    user
+    Get Text    ${friend_latest_post}    contains    This is a public post.
     ${friend_latest_post_comment_input}    Get Element    xpath=//input[@class="jsx-2270411553 input ml-2"] >> nth=0
     Write And Send A Comment To Post    This is a comment.    ${friend_latest_post_comment_input}
     Get Text    ${friend_latest_post}    contains    This is a comment.

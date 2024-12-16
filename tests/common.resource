@@ -18,6 +18,4 @@ Enter Password
     Fill Text    xpath=//input[@name="loginPassword"]    ${PASSWORD}
 
 Submit Login Form
-    Sleep    2s
     Click    //button[contains(text(), "Login")]
-    Sleep    2s
