@@ -37,6 +37,12 @@ jobs:
         with:
           path: script.js
 
+      - name: Start Application
+        run: |
+          docker-compose up -d
+          sleep 10          
+          curl -f http://localhost || exit 1  
+
       - name: Robot
         env:
             WORK_TOKEN: ${{ secrets.GIT_TOKEN }}
