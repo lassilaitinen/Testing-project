@@ -105,9 +105,9 @@ Publish A Public Post
     Open Browser To Login Page
     Do Successful Login    robot@example.com    ${PASSWORD}
     Fill Text    xpath=//input[@type="search"]    user
+    ${friend_user}    Get Text    xpath=/html/body/div/div[1]/div[1]/div/div[2]/div/a
     Click    xpath=/html/body/div/div[1]/div[1]/div/div[2]/div/a
-    ${friend_user}    Get Text    xpath=/html/body/div/div[2]/div[2]/div[1]/div/div/p
-    Click    xpath=/html/body/div/div[2]/div[2]/div[1]/div/div/p
+    #Click    xpath=/html/body/div/div[2]/div[2]/div[1]/div/div/p
     ${friend_latest_post}    Get Element    xpath=/html/body/div/div[2]/div[2]/div[3]/div
     Get Text    ${friend_latest_post}    contains    ${friend_user}
     Get Text    ${friend_latest_post}    contains    This is a public post.
