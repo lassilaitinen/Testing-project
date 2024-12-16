@@ -29,18 +29,10 @@ jobs:
           pip install robotframework-browser
           rfbrowser init
 
-      - name: Setup K6
-        uses: grafana/setup-k6-action@v1
-
-      - name: Run K6 Performance tests 
-        uses: grafana/run-k6-action@v1
-        with:
-          path: script.js
-
       - name: Start Application
         run: | 
           docker compose up -d
-          sleep 10          
+          sleep 2          
           curl -f http://localhost || exit 1  
 
       - name: Robot
@@ -71,6 +63,14 @@ jobs:
 
           echo "Script execution completed"
         continue-on-error: true
+
+      - name: Setup K6
+        uses: grafana/setup-k6-action@v1
+
+      - name: Run K6 Performance tests 
+        uses: grafana/run-k6-action@v1
+        with:
+          path: script.js
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
