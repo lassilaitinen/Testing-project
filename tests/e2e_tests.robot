@@ -79,7 +79,7 @@ Do Successful Registaration And Successfully Log In
     Open Registaration Page
     Fill Registaration Form    robot@example.com    ${PASSWORD}   robot
     Open Browser To Login Page
-    Do Successful Login    robot@example.com    string123
+    Do Successful Login    robot@example.com    ${PASSWORD}
     Sleep    3s
     #The following checks that chat is availabel; a feature that doesn't exist in the login page or in any other page
     Get Text    body    contains    Chat
