@@ -30,6 +30,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           # Install additional dependencies if needed
+          npm install
           pip install robotframework
           pip install robotframework-browser
           rfbrowser init
