@@ -1,18 +1,5 @@
 version: '3'
 services:
-  backend-dev:
-    build: backend
-    depends_on:
-      - cache
-      - pubsub
-      - database
-      - graph
-    restart: unless-stopped
-    network_mode: host
-    command: bash -c "python wait_for.py && python init_db.py && python main.py"
-    volumes:
-      - "./backend/:/app/"
-      - "./_data/avatar-data:/app/_data/avatar-data"
   cache:
     image: "redis:6.2-alpine"
     command: --port 6379
