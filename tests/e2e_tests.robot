@@ -26,7 +26,8 @@ Do Successful Login
     Enter Email Address    ${email}
     Enter Password    ${psw}
     Submit Login Form
-    #Get Url    ==    ${URL}/profile
+    Sleep    2s
+    Get Url    ==    ${URL}/profile
 
 Do Successful Logout
     Click    //button[contains(text(), "Log out")]
@@ -50,7 +51,6 @@ Register Default User
     Open Browser To Login Page
     Do Successful Login    ${EMAIL}    ${PASSWORD}
     Get Url    ==    ${URL}/profile
-    Do Successful Logout
 
 Profile Front Page Should Be Visible After Successful Login
     Open Browser To Login Page
