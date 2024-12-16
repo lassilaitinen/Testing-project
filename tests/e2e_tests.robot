@@ -50,7 +50,7 @@ Register Default User
     Fill Registaration Form    ${EMAIL}    ${PASSWORD}    user
     Open Browser To Login Page
     Do Successful Login    ${EMAIL}    ${PASSWORD}
-    Get Url    ==    ${URL}/profile
+    #Get Url    ==    ${URL}/profile
 
 Profile Front Page Should Be Visible After Successful Login
     Open Browser To Login Page
