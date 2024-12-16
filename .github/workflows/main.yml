@@ -48,7 +48,6 @@ jobs:
             WORK_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: |
           robot -d test-results tests/
-        continue-on-error: true
 
       - name: Setup K6
         uses: grafana/setup-k6-action@v1
