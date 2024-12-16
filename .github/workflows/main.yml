@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - raw
   workflow_dispatch:
   schedule:
     - cron: '0 17 * * *'
@@ -47,27 +48,6 @@ jobs:
             WORK_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: |
           robot -d test-results tests/
-        continue-on-error: true
-
-      - name: Run Robot Framework tests
-        env:
-          WORK_TOKEN: ${{ secrets.GIT_TOKEN }}
-          TZ: Asia/Ho_Chi_Minh
-        run: |
-          if ! robot --outputdir results --exclude skip tests/; then
-              echo "Robot Framework tests failed. Rerunning failed tests..."
-              if [ -f results/output.xml ]; then
-                  robot --rerunfailed results/output.xml --outputdir results_rerun tests/ || true
-                  if [ -f results_rerun/output.xml ]; then
-                      rebot --output results/output.xml --log results/log.html --report results/report.html --merge results/output.xml results_rerun/output.xml
-                  else
-                      echo "No output.xml file found from rerun. Skipping merge."
-                  fi
-              else
-                  echo "No output.xml file found. Cannot rerun failed tests."
-              fi
-          fi
-          echo "Script execution completed"
         continue-on-error: true
 
       - name: Setup K6
