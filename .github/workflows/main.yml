@@ -32,9 +32,7 @@ jobs:
       - name: Start Application
         run: | 
           docker compose up -d
-    
-     
-          
+   
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
