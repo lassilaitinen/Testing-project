@@ -65,6 +65,7 @@ Profile Front Page Should Be Visible After Successful Login
     Open Browser To Login Page
     Do Successful Login    ${DEFAULT_EMAIL}    ${PASSWORD}
     #The following checks that chat is availabel; a feature that doesn't exist in the login page or in any other page
+    # "Double check" for this particulart test
     Get Text    body    contains    Chat
     Get Url    ==    ${URL}/profile
 
