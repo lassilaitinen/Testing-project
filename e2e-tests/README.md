@@ -40,7 +40,7 @@ Verify the installation:
 
 #### 2.3. Add tests
 
-In this folder are folder named 'e2e-tests' and '.github'. Add these to the project, into the root folder. Now the app includes the tests.
+In this folder are folder named 'e2e-tests' and '.github'. Add these (or the whole zip-folder) to the project, into the root folder. Now the app includes the tests.
 
 ## 3. Run tests
 
