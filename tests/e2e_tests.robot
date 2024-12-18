@@ -53,7 +53,7 @@ Register Default User
     [Tags]    smoke
     Open Registaration Page
     # Random user email and name to act as an default user used in another tests
-    ${name}    Generate Random String    6    [LETTERS]
+    ${name}    Generate Random String    8    [LETTERS]
     ${default_email}=    Set Variable    ${name}@example.com
     Set Suite Variable    ${DEFAULT_EMAIL}    ${DEFAULT_EMAIL}
     Set Suite Variable    ${DEFAULT_USER}    ${name}
