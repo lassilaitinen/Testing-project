@@ -50,6 +50,7 @@ Write And Publish A Post
 
 *** Test Cases ***
 Register Default User
+    [Tags]    smoke
     Open Registaration Page
     # Random user email and name to act as an default user used in another tests
     ${name}    Generate Random String    6    [LETTERS]
@@ -62,6 +63,7 @@ Register Default User
     Do Successful Login    ${DEFAULT_EMAIL}    ${PASSWORD}
 
 Profile Front Page Should Be Visible After Successful Login
+    [Tags]    smoke
     Open Browser To Login Page
     Do Successful Login    ${DEFAULT_EMAIL}    ${PASSWORD}
     #The following checks that chat is availabel; a feature that doesn't exist in the login page or in any other page
@@ -70,6 +72,7 @@ Profile Front Page Should Be Visible After Successful Login
     Get Url    ==    ${URL}/profile
 
 Error Message Should Be Visible After Login With Wrong Password
+    [Tags]    smoke
     Open Browser To Login Page
     Enter Email Address    ${DEFAULT_EMAIL}
     Fill Text    xpath=//input[@name="loginPassword"]    stringi
@@ -78,6 +81,7 @@ Error Message Should Be Visible After Login With Wrong Password
     Get Url    ==    ${URL}/login
 
 Error Message Should Be Visible After Login With Wrong Email
+    [Tags]    smoke
     Open Browser To Login Page
     Fill Text    xpath=//input[@name="loginEmail"]    user2@example.com
     Enter Password    ${PASSWORD}
@@ -86,6 +90,7 @@ Error Message Should Be Visible After Login With Wrong Email
     Get Url    ==    ${URL}/login
 
 Do Successful Registaration And Successfully Log In
+    [Tags]    smoke
     Open Registaration Page
     # Random user email and name to act as an second default user used in another tests where two users is needed
     ${name2}    Generate Random String    7    [LETTERS]
@@ -101,6 +106,7 @@ Do Successful Registaration And Successfully Log In
     Get Url    ==    ${URL}/profile
 
 Login Page Should Be Visible After Successful Logout
+    [Tags]    smoke
     Open Browser To Login Page
     Do Successful Login    ${DEFAULT_EMAIL}    ${PASSWORD}
     #The following checks that chat is availabel; a feature that doesn't exist in the login page or in any other page
