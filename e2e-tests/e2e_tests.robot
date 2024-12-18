@@ -15,6 +15,7 @@ ${FRIENDS_BUTTON} =    xpath=/html/body/div/div[1]/div[2]/div/button[1]
 *** Keywords ***
 Open Registaration Page
     Open Browser To Login Page
+    Sleep    2s
     Click   //button[contains(text(), "Sign up")]
     Get Url    ==    ${URL}/register
 
