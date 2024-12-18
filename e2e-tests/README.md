@@ -15,7 +15,7 @@ Navigate inside project root folder:
 `cd bunnybook`  
 
 Start all services:  
-`docker-compose up`  
+`docker compose up`  
 
 After some time (first execution might be slow), open Chrome or Firefox and navigate to:  
 http://localhost 
@@ -38,11 +38,13 @@ Install Robot Framework:
 Verify the installation:
 `robot --version`
 
+#### 2.3. Add tests
+
+In this folder are folder named 'e2e-tests' and '.github'. Add these to the project, into the root folder. Now the app includes the tests.
+
 ## 3. Run tests
 
-In the root folder of the project, run the following command to run tests:
-`robot tests`
+Tests should be found in the 'e2e-tests'- folder of the project. In the root folder of the project, run the following command to run tests:
+`robot e2e-tests`
 
-Note that in order to run the tests, you need to execute the `docker-compose up` command in one shell, and in other shell you can execute the tests. This is because the app needs to be running if you want to execute the tests.
-
-Note that sometimes the 1st and 5th tests fail somehow, so if all tests don't pass in the first try, run the tests again.
+Note that in order to run the tests, you need to execute the `docker compose up` command in one shell, and in other shell you can execute the tests. This is because the app needs to be running if you want to execute the tests. The CI-pipeline runs 'smoke'-tagged tests in every push, and all tests daily.

@@ -46,7 +46,7 @@ jobs:
         env:
             WORK_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: |
-          robot -d test-results tests/
+          robot -d test-results e2e-tests/
 
       - name: Setup K6
         uses: grafana/setup-k6-action@v1
@@ -100,7 +100,7 @@ jobs:
         env:
             WORK_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: |
-          robot --include smoke -d results/smoke tests/
+          robot --include smoke -d results/smoke e2e-tests/
 
       - name: Setup K6
         uses: grafana/setup-k6-action@v1
