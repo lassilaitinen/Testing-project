@@ -1,10 +1,19 @@
-# The magnifier in the search bar does not work
+### Bug Report: No Confirmation When Removing Friend
 
-## Steps to reproduce
-Open the bunnybook app in your browser and log in with your credentials. In the top-left corner is a search bar. Start typing to search bar and click the magnifier icon in the search bar.
+#### Title
+No Confirmation Prompt for Friend Removal
 
-## Expected results
-When clicking the magnifier icon, the app searches for the other bunnies or has some kind on functionality. 
+#### Environment
+- **Testing Environment:** MacOS Sonoma 14.5, Google Chrome Version 131.0.6778.109 (Official Build) (arm64)
 
-## Actual behavior
-Clicking the icon doesn't do anything. The search bar and the whole page stays as they were before clicking the icon.
+
+#### Expected Behavior
+When a user attempts to remove a friend, a confirmation dialog should appear to verify the action before it is finalized.
+
+#### Actual Behavior
+The friend is removed immediately after clicking the "Remove Friend" button, with no confirmation prompt displayed.
+
+#### Steps to Reproduce
+1. Navigate to the friends list.
+2. Click the "Remove Friend" button next to a friend's name.
+3. Observe that the friend is removed without a confirmation dialog appearing.

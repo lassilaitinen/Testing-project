@@ -1,17 +1,18 @@
-# Line breaks not shown in published posts
+### Bug Report: Missing Comment Submission Button
 
-## Steps to reproduce
-Log in with your email and password. Start writing a new post, first just text, then add line break and continue to write text. Then press 'publish' -button. The generated post appears under the new post -module.
+#### Title
+Missing "Submit Comment" Button
 
-## Expected results
-The post is expected to appear similiar in the published post to text you write to the post, including the line breaks.
+#### Environment
+- **Testing Environment:** MacOS Sonoma 14.5, Google Chrome Version 131.0.6778.109 (Official Build) (arm64)
 
-## Actual behavior
-The text is in the same line, the line breaks appearing as regular spaces in the post published.
+#### Expected Behavior
+After typing a comment in the text area, there should be a visible "Submit" button to send the comment.
 
-## Example
-Post text and expected behavior in published post:
-"this is
- a test."
-Actual behavior:
-"this is a test."
+#### Actual Behavior
+The "Submit" button is missing, preventing the user from knowing how to post a comment.
+
+#### Steps to Reproduce
+1. Navigate to the own or another user's post page.
+2. Type a comment in the comment text area.
+3. Observe that there is no visible "Submit" button.

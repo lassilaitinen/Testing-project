@@ -1,10 +1,18 @@
-# Password display (eye) -icon deactivates the whole input field
+### Bug Report: Missing Submit Button in Chat
 
-## Steps to reproduce
-Open the bunnybook app in your browser. Start typing your password, and then click the eye -icon in the password field. 
+#### Title
+Chat "Send" Button Not Present
 
-## Expected results
-When clicking the eye -icon, the dots representing the letters change to actual letters. The input field stays selected and you are able to continue writing with the letters on display instead of dots.
+#### Environment
+- **Testing Environment:** MacOS Sonoma 14.5, Google Chrome Version 131.0.6778.109 (Official Build) (arm64)
 
-## Actual behavior
-When clicking the eye -icon, the dots representing the letters change to actual letters. The input field stays deactivates and you are not able to continue writing without reselecting the input field.
+#### Expected Behavior
+The chat interface should have a "Send" button to allow users to send messages.
+
+#### Actual Behavior
+The "Send" button is not visible in the chat interface, users don't know how to send a message.
+
+#### Steps to Reproduce
+1. Navigate to the chat section.
+2. Type a message in the chat input box.
+3. Observe that there is no "Send" button to submit the message.

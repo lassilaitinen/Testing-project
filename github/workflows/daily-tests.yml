@@ -1,0 +1,51 @@
+name: Run Daily Tests
+
+on:
+  schedule: 
+    - cron: '30 01 * * *'
+
+jobs:
+  daily-tests:
+    name: Run Full Test Suite
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5.0.0
+        with:
+          python-version: 3.12.2
+      
+      - name: Setup Firefox
+        id: setup-firefox
+        uses: browser-actions/setup-firefox@v1
+        with:
+          firefox-version: latest
+
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+
+      - name: Run docker-compose
+        run: docker-compose up -d
+      
+      - name: Setup Workspace
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install --upgrade robotframework-seleniumlibrary
+      
+      - name: Run Full Tests
+        run: |
+          source .venv/bin/activate
+          robot --variable BROWSER:headlessfirefox --variable BROWSER_OPTIONS:"--disable-dev-shm-usage" -d results e2e_tests/tests/
+
+      - name: Setup K6
+        uses: grafana/setup-k6-action@v1
+  
+      - name: Run Performance Test
+        uses: grafana/run-k6-action@v1
+        with:
+          path: performance_test/performance_test.js

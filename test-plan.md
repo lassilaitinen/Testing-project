@@ -1,41 +1,102 @@
-# Test Plan for Bunnybook App
+# Bunnybook Test Plan
 
-## Introduction
-Bunnybook is a small-scale social media application. The user can register and log in to the application. After logging in, the user can create posts, view posts from other users and comment posts. Also deleting self-written posts is something user can do.
+## Objectives
+The goal of this test plan is to ensure that the Bunnybook application meets its functional requirements and provides a seamless user experience. This plan covers end-to-end testing for critical workflows, ensuring that key functionalities such as registration, login, posting, commenting, and deleting posts work as expected.
 
-## Approach
-The testing of the Bunnybook application will be started by getting familiar with the application and its functionalities. This includes using the app and exploring functionalities which should be tested. The possibly identified issues and bugs in the application will be reported in seperate markdown-files. The project will be stored in GitHub.
+---
 
-The second part is to write the end-to-end tests using user stories. The goal is to cover the main functionalities of the application. After writign the end-to-end tests, the continous integration (CI) pipeline will be set up. After settung up a working CI-pipeline with working e2e-tests, the CI-pipeline will be extended by adding non-functional tests. CI-pipeline will execute all tests daily, and after every push to GitHub only 'smoke'-tagged test will be run.
+## Scope of Testing
 
-## Resources
-The testing project will be done by one tester, who plans, writes and executes the testing and the process as a whole. The tester is able to commit a few hours per day to this process. The tester has also other commitments, which can result as a longer process for this project. 
+### **In Scope**
+1. **Functional Testing:**
+   - Registration: Verifying that a user can successfully register.
+   - Login: Validating that a user can log in with correct credentials and receive appropriate error messages for invalid credentials.
+   - Posting: Ensuring users can create public and private posts.
+   - Commenting: Verifying that users can comment on their own posts and others' posts.
+   - Deleting Posts: Confirming that users can delete posts they created.
 
-## Tools
-In end-to-end testing, the Robot Framework is used to test the main functionalities. The continuous integration (CI) pipeline will be done using GitHub Actions. The non-functional test will be done by using k6 -tests.
+2. **End-to-End Testing Framework:**
+   - **Framework:** Robot Framework with SeleniumLibrary.
+   - **Browsers:** Tests will be run using `headlessfirefox` for consistency and ease of integration.
+   - **Test Execution Platform:** Local and GitHub Actions for CI/CD pipeline.
 
-## Scope
-### In-scope
-The main functionalities of the applications are within the scope of testing. These main functionalities are the base for user stories and include following features:
-- logging in and out
-- user registaration
-- creating public and restrictered visibility posts
-- user deleting own posts
-- user commenting own posts and other users posts
-- user viewing public post by other user
+3. **Happy Path Testing:** 
+   - Covering main user workflows without deviating into edge cases or error handling beyond invalid credentials.
 
-### Out-scope
-Other functionalities in the app are out of the scope, such as these following features:
-- searching other users and posts
-- online/offline friend status
-- notifications
-- chat with all its functionalities, such as converstations history
-- profile picture creation
-- friend requests and suggestions
+4. **Cross-User Scenarios:**
+   - Ensuring interactions between multiple users, such as viewing and commenting on posts.
 
-The app has also some API tests, which are not included in this testing project. The API tests should be improved by adding more functionalities to be tested, for example by testing the notifications and testing the chat functionality. Another way to improve the API testing is to include it to the CI-pipeline, so possible errors can be seen right away.
+### **Out of Scope**
+1. **Performance Testing:**
+   - Load testing of the application.
+   - Integration with tools like K6 to simulate high user traffic.
 
-These are all important features if the app reaches production. However, these are not the main functionalities. The app can be used without testing these features, but in production these functionalities should also be tested, alongside the API tests. 
+2. **UI Responsiveness and Accessibility:**
+   - Testing application behavior on different devices and screen resolutions.
 
-## Schedule of Intended Testing Activities
-The whole testing process is intended to be done within a two weeks from the start of the process.
+3. **API Integration Testing Improvements:**
+   - Comprehensive API test coverage for all endpoints.
+   - Improvements for test data handling:
+     - Use dynamic fixtures or mocks instead of static data.
+     - Automate database cleanup between tests.
+   - Test maintainability:
+     - Refactor repetitive API test code into reusable functions.
+     - Introduce meaningful error messages for failed assertions.
+
+---
+
+## Test Schedule
+| **Phase**               | **Activities**                                   | **Duration**    |
+|--------------------------|-------------------------------------------------|-----------------|
+| Test Planning            | Write the test plan and configure the environment | 1 day           |
+| Test Case Development    | Create Robot Framework test cases               | 4 days          |
+| Initial Test Execution   | Run tests locally to validate workflows         | 2 day           |
+| CI/CD Integration        | Integrate tests into GitHub Actions             | 1 day           |
+| Iterative Improvements   | Debug, refine, and stabilize failing tests       | 2 days        |
+
+---
+
+## Framework and Tools
+1. **Framework:** Robot Framework with SeleniumLibrary for E2E testing.
+2. **CI/CD:** GitHub Actions for automated test execution.
+3. **Browsers:** Headless Firefox.
+4. **Version Control:** Git for managing test scripts and automation files.
+
+---
+
+## Risks and Mitigations
+1. **Risk:** Browser or driver version mismatches in CI/CD.
+   - **Mitigation:** Use version pinning and browser setup actions in GitHub workflows.
+   
+2. **Risk:** Data dependencies causing test failures.
+   - **Mitigation:** Use unique test data for each test and clean up database between runs.
+
+3. **Risk:** Flaky tests due to dynamic elements.
+   - **Mitigation:** Implement proper waits and dynamic locators.
+
+---
+
+## Improvements for API Integration Tests
+1. **Coverage:**
+   - Validate response schemas.
+   - Add edge case tests (e.g., invalid inputs, unauthorized access).
+   - Test token refresh and expiration.
+
+2. **Data Management:**
+   - Use dynamic test data.
+   - Automate database setup and teardown.
+   - Add parameterized tests for diverse inputs.
+
+3. **Error Reporting:**
+   - Log detailed failure data.
+   - Use tools like Allure for better test reporting.
+
+4. **Maintainability:**
+   - Refactor repetitive code.
+   - Modularize tests for easy expansion.
+   - Use consistent naming and documentation.
+
+---
+
+## Conclusion
+This test plan provides a structured approach to verifying the Bunnybook application's core functionalities. While the focus is on happy path tests for essential workflows, future efforts could expand into wider performance testing and enhanced API integration tests to ensure the application is production-ready.

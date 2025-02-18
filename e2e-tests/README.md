@@ -1,50 +1,33 @@
-![GHA workflow badge](https://github.com/lassilaitinen/bunnybook/actions/workflows/main.yml/badge.svg)
+## Quick start
+#### Requirements
+- OS: Linux, macOS, Windows 
+- Install Docker (https://docs.docker.com/install/)
+- (Linux only) Install docker-compose (https://docs.docker.com/compose/install/)
 
-# Testing guidelines
-This guide explains how to execute the tests in this project.
 
-## 1. Deploy the app to your computer
-#### This part includes the same guidelines about getting the app than the original app.
-
-You need to have Docker installed: (https://docs.docker.com/install/)
-
+#### Install Robot Framework and deploy Bunnybook on your local machine
 Open a shell and clone this repository:  
 `git clone https://github.com/pietrobassi/bunnybook.git`  
 
 Navigate inside project root folder:  
 `cd bunnybook`  
 
-Start all services:  
-`docker compose up`  
-
-After some time (first execution might be slow), open Chrome or Firefox and navigate to:  
-http://localhost 
-
-## 2. Implement the testing environment
-
-#### 2.1. Install Python
-
-Open new shell and install Python by following these guidelines: https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#python-installation
-
-#### 2.2. Install the Robot Framework
-
-After installing Python, install Robot framework with following instructions:
-
-Open shell, go to the root folder of the project and run commands:
-
 Install Robot Framework:
+
 `pip install robotframework`
 
-Verify the installation:
-`robot --version`
+Install Selenium: 
 
-#### 2.3. Add tests
+`pip install --upgrade robotframework-seleniumlibrary`
 
-In this folder are folder named 'e2e-tests' and '.github'. Add these (or the whole zip-folder) to the project, into the root folder. Now the app includes the tests.
+Start all services:  
+`docker-compose up`  
 
-## 3. Run tests
+After some time (first execution might be slow), open Chrome or Firefox and navigate to:  
+http://localhost
 
-Tests should be found in the 'e2e-tests'- folder of the project. In the root folder of the project, run the following command to run tests:
-`robot e2e-tests`
+Remember to add e2e-tests, github/workflows and performance_test folders to bunnybook folder to be able to run tests and workflows. 
 
-Note that in order to run the tests, you need to execute the `docker compose up` command in one shell, and in other shell you can execute the tests. This is because the app needs to be running if you want to execute the tests. The CI-pipeline runs 'smoke'-tagged tests in every push, and all tests daily.
+After all services started open new window in terminal and go to e2e folder. Then execute `robot .` to run all e2e tests.
+
+
